@@ -29,7 +29,7 @@ public class randomLevelMaker : MonoBehaviour {
 
 
 	void Start(){
-		Debug.Log ("called");
+		//Debug.Log ("called");
 		power_ups_spawned = 0;
 		woodenBox_spawn_count = 0;
 	}
