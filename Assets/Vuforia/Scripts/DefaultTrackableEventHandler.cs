@@ -21,17 +21,17 @@ namespace Vuforia
     
         #endregion // PRIVATE_MEMBER_VARIABLES
 
-		public GameObject gameController;
-		public GameObject Player;
+		//public GameObject gameController;
+		//public GameObject Player;
 		//public GameObject enemy;
-		public GameObject level;
+		//public GameObject level;
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
     
         void Start()
         {
 			//Player.SetActive (false);
-			gameController.SetActive (false);
+		//	gameController.SetActive (false);
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
             if (mTrackableBehaviour)
             {
@@ -89,10 +89,10 @@ namespace Vuforia
 
 		private void OnTrackingFound()
         {
-			Player.SetActive (true);
-			level.SetActive (true);
+		//	Player.SetActive (true);
+		//	level.SetActive (true);
 			//activateEnemy ();
-			gameController.SetActive (true);
+		//	gameController.SetActive (true);
 			Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
@@ -114,9 +114,9 @@ namespace Vuforia
 
         private void OnTrackingLost()
         {
-			Player.SetActive (false);
-			level.SetActive (false);
-			gameController.SetActive (false);
+		//	Player.SetActive (false);
+		//	level.SetActive (false);
+		//	gameController.SetActive (false);
 
 			Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);

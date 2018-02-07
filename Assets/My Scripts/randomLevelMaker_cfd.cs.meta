@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4a433455beccd3f4f9bbbf2319d7e45a
+timeCreated: 1513772953
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - woodenBox: {instanceID: 0}
+  - woodenBoxPowerUp: {instanceID: 0}
+  - imageTarget: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
