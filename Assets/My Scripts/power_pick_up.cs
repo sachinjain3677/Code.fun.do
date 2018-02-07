@@ -11,10 +11,11 @@ public class power_pick_up : MonoBehaviour {
 	int starsPickedUp;
 
 	public AudioSource music;
-
+	public GameObject winMenu;
 	public float speed_increase_factor;
 
 	void Start(){
+		winMenu.SetActive (false);
 		rlm = GameObject.Find ("GameController").GetComponent<randomLevelMaker_cfd> ();
 		starsPickedUp = 0;
 		bsae = GameObject.Find("GameController").GetComponent<BombSpawnAndExplode_cfd>();
@@ -44,7 +45,7 @@ public class power_pick_up : MonoBehaviour {
 			music.Play ();
 
 			if (starsPickedUp == rlm.star_cubes_spawned) {
-				//Game won
+				winMenu.SetActive (true);
 				Debug.Log("Game won!!!");
 			}
 		}
