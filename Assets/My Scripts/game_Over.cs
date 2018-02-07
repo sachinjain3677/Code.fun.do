@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class game_Over : MonoBehaviour {
 
-	BombSpawnAndExplode bsae;
+	BombSpawnAndExplode_cfd bsae;
 
 	public GameObject game_over_menu;
 	// Use this for initialization
 	void Start () {
-		bsae = GameObject.Find ("GameController").GetComponent<BombSpawnAndExplode> ();
+		bsae = GameObject.Find ("GameController").GetComponent<BombSpawnAndExplode_cfd> ();
 		game_over_menu.SetActive (false);
 	}
 	
