@@ -1,21 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\My Scripts\randomLevelMaker_cfd.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\My Scripts\ExplosionTriggerScript.cs">
     <Files>
-      <File FileName="Assets\My Scripts\ObjectMatrix.cs" Line="7" Column="27" />
+      <File FileName="Assets\My Scripts\ObjectMatrix.cs" Line="1" Column="1" />
       <File FileName="Assets\My Scripts\BombTriggerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\My Scripts\ExplosionTriggerScript.cs" Line="18" Column="33" />
+      <File FileName="Assets\My Scripts\ExplosionTriggerScript.cs" Line="31" Column="24" />
       <File FileName="Assets\My Scripts\game_Over.cs" Line="12" Column="81" />
       <File FileName="Assets\My Scripts\player_touched.cs" Line="1" Column="1" />
       <File FileName="Assets\My Scripts\triggerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\My Scripts\movingPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\My Scripts\EnemyController.cs" Line="1" Column="1" />
       <File FileName="Assets\My Scripts\player_control_direction_predictor.cs" Line="19" Column="1" />
-      <File FileName="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" Line="143" Column="1" />
-      <File FileName="Assets\Pause Menu Assets\Scripts\Pausemenu\PauseManager.cs" Line="993" Column="1" />
-      <File FileName="Assets\My Scripts\power_pick_up.cs" Line="33" Column="34" />
-      <File FileName="Assets\My Scripts\randomLevelMaker_cfd.cs" Line="190" Column="9" />
-      <File FileName="Assets\My Scripts\BombSpawnAndExplode_cfd.cs" Line="46" Column="76" NotebookId="1" />
+      <File FileName="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Pause Menu Assets\Scripts\Pausemenu\PauseManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\My Scripts\randomLevelMaker_cfd.cs" Line="136" Column="106" />
+      <File FileName="Assets\My Scripts\EnemyHealth1.cs" Line="1" Column="1" />
+      <File FileName="Assets\immunity.cs" Line="19" Column="2" />
+      <File FileName="Assets\My Scripts\BombSpawnAndExplode_cfd.cs" Line="242" Column="73" NotebookId="1" />
+      <File FileName="Assets\My Scripts\power_pick_up.cs" Line="48" Column="30" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

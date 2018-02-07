@@ -158,7 +158,7 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 						}
 						spawnedWoodenBox.transform.parent = level.transform;
 					}
-				} else {
+				} else if(om.level [i, j].gameObject.tag != "Enemy_still"){
 					om.level [i, j].gameObject.tag = "fixed_box";
 				}
 
