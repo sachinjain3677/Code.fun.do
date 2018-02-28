@@ -6,7 +6,7 @@ public class fire_button_control : MonoBehaviour {
 
 	private GameObject gameControllerHolder;
 
-	BombSpawnAndExplode_cfd bsae;
+	BombSpawnAndExplode bsae;
 	//public AudioSource music;
 	//public AudioClip clip;
 	RectTransform button;
@@ -23,7 +23,7 @@ public class fire_button_control : MonoBehaviour {
 	void Update () {
 		gameControllerHolder = GameObject.Find ("GameController");
 		if (gameControllerHolder != null) {
-			bsae = gameControllerHolder.GetComponent<BombSpawnAndExplode_cfd> ();
+			bsae = gameControllerHolder.GetComponent<BombSpawnAndExplode> ();
 		
 			if (Input.mousePosition.y >= button.position.y - button.rect.height / 2 && Input.mousePosition.y <= button.position.y + button.rect.height / 2 && Input.mousePosition.x <= button.position.x + button.rect.width / 2 && Input.mousePosition.x >= button.position.x - button.rect.width / 2) {
 				if (Input.GetMouseButtonDown (0)) {
