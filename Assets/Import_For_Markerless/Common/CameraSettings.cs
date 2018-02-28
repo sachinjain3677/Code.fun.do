@@ -1,5 +1,5 @@
 ﻿/*===============================================================================
-Copyright (c) 2015-2017 PTC Inc. All Rights Reserved.
+Copyright (c) 2015 PTC Inc. All Rights Reserved.
  
 Copyright (c) 2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
  
@@ -21,7 +21,7 @@ public class CameraSettings : MonoBehaviour
 
 
     #region MONOBEHAVIOUR_METHODS
-    void Start()
+    void Start () 
     {
         var vuforia = VuforiaARController.Instance;
         vuforia.RegisterVuforiaStartedCallback(OnVuforiaStarted);
@@ -91,7 +91,7 @@ public class CameraSettings : MonoBehaviour
 
     public void SelectCamera(CameraDevice.CameraDirection camDir)
     {
-        if (RestartCamera(camDir))
+        if (RestartCamera (camDir)) 
         {
             mActiveDirection = camDir;
 
@@ -103,40 +103,6 @@ public class CameraSettings : MonoBehaviour
     public bool IsFrontCameraActive()
     {
         return (mActiveDirection == CameraDevice.CameraDirection.CAMERA_FRONT);
-    }
-
-
-    public bool RestartCamera(CameraDevice.CameraDirection direction)
-    {
-        ObjectTracker tracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
-        if (tracker != null)
-        {
-            tracker.Stop();
-        }
-        CameraDevice.Instance.Stop();
-        CameraDevice.Instance.Deinit();
-
-        if (!CameraDevice.Instance.Init(direction))
-        {
-            Debug.Log("Failed to init camera for direction: " + direction.ToString());
-            return false;
-        }
-        if (!CameraDevice.Instance.Start())
-        {
-            Debug.Log("Failed to start camera for direction: " + direction.ToString());
-            return false;
-        }
-
-        if (tracker != null)
-        {
-            if (!tracker.Start())
-            {
-                Debug.Log("Failed to restart the Tracker.");
-                return false;
-            }
-        }
-
-        return true;
     }
     #endregion // PUBLIC_METHODS
 
@@ -179,5 +145,36 @@ public class CameraSettings : MonoBehaviour
             CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_NORMAL);
     }
 
+    private bool RestartCamera(CameraDevice.CameraDirection direction)
+    {
+        ObjectTracker tracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
+        if (tracker != null)
+            tracker.Stop();
+
+        CameraDevice.Instance.Stop();
+        CameraDevice.Instance.Deinit();
+
+        if (!CameraDevice.Instance.Init(direction))
+        {
+            Debug.Log("Failed to init camera for direction: " + direction.ToString());
+            return false;
+        }
+        if (!CameraDevice.Instance.Start())
+        {
+            Debug.Log("Failed to start camera for direction: " + direction.ToString());
+            return false;
+        }
+
+        if (tracker != null)
+        {
+            if (!tracker.Start())
+            {
+                Debug.Log("Failed to restart the Tracker.");
+                return false;
+            }
+        }
+            
+        return true;
+    }
     #endregion // PRIVATE_METHODS
 }

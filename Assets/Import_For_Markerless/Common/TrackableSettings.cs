@@ -1,5 +1,5 @@
 ﻿/*===============================================================================
-Copyright (c) 2015-2017 PTC Inc. All Rights Reserved.
+Copyright (c) 2015-2016 PTC Inc. All Rights Reserved.
  
 Copyright (c) 2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
  
@@ -29,37 +29,96 @@ public class TrackableSettings : MonoBehaviour
     /// Enabled/disabled Extended Tracking mode.
     /// </summary>
     /// <param name="ON"></param>
-    public virtual void SwitchExtendedTracking(bool enableExtendedTracking)
+    public virtual void SwitchExtendedTracking(bool extTrackingEnabled)
     {
         StateManager stateManager = TrackerManager.Instance.GetStateManager();
 
         // We iterate over all TrackableBehaviours to start or stop extended tracking for the targets they represent.
         bool success = true;
-        foreach (TrackableBehaviour tb in stateManager.GetTrackableBehaviours())
+        foreach (var tb in stateManager.GetTrackableBehaviours())
         {
-            if (tb is DataSetTrackableBehaviour)
+            if (tb is ImageTargetBehaviour)
             {
-                if (tb.Trackable is ObjectTarget)
+                ImageTargetBehaviour itb = tb as ImageTargetBehaviour;
+				if (extTrackingEnabled)
                 {
-                    ObjectTarget target = tb.Trackable as ObjectTarget;
-
-                    if (enableExtendedTracking)
+                    if (!itb.ImageTarget.StartExtendedTracking())
                     {
-                        success = target.StartExtendedTracking();
-
-                        if (success)
-                            Debug.Log("Successfully started Extended Tracking on Target: " + tb.TrackableName);
-                        else
-                            Debug.LogError("Failed to start Extended Tracking on Target: " + tb.TrackableName);
+                        success = false;
+                        Debug.LogError("Failed to start Extended Tracking on Target " + itb.TrackableName);
                     }
-                    else
+                }
+                else
+                {
+                    itb.ImageTarget.StopExtendedTracking();
+                }
+            }
+            else if (tb is MultiTargetBehaviour)
+            {
+                MultiTargetBehaviour mtb = tb as MultiTargetBehaviour;
+				if (extTrackingEnabled)
+                {
+                    if (!mtb.MultiTarget.StartExtendedTracking())
                     {
-                        target.StopExtendedTracking();
+                        success = false;
+                        Debug.LogError("Failed to start Extended Tracking on Target " + mtb.TrackableName);
                     }
+                }
+                else
+                {
+                    mtb.MultiTarget.StopExtendedTracking();
+                }
+            }
+            else if (tb is CylinderTargetBehaviour)
+            {
+                CylinderTargetBehaviour ctb = tb as CylinderTargetBehaviour;
+				if (extTrackingEnabled)
+                {
+                    if (!ctb.CylinderTarget.StartExtendedTracking())
+                    {
+                        success = false;
+                        Debug.LogError("Failed to start Extended Tracking on Target " + ctb.TrackableName);
+                    }
+                }
+                else
+                {
+                    ctb.CylinderTarget.StopExtendedTracking();
+                }
+            }
+            else if (tb is ObjectTargetBehaviour)
+            {
+				ObjectTargetBehaviour otb = tb as ObjectTargetBehaviour;
+                if (extTrackingEnabled)
+                {
+                    if (!otb.ObjectTarget.StartExtendedTracking())
+                    {
+                        success = false;
+                        Debug.LogError("Failed to start Extended Tracking on Target " + otb.TrackableName);
+                    }
+                }
+                else
+                {
+					otb.ObjectTarget.StopExtendedTracking();
+                }
+            }
+            else if (tb is VuMarkBehaviour)
+            {
+                VuMarkBehaviour vmb = tb as VuMarkBehaviour;
+                if (extTrackingEnabled)
+                {
+                    if (!vmb.VuMarkTemplate.StartExtendedTracking())
+                    {
+                        success = false;
+                        Debug.LogError("Failed to start Extended Tracking on Target " + vmb.TrackableName);
+                    }
+                }
+                else
+                {
+                    vmb.VuMarkTemplate.StopExtendedTracking();
                 }
             }
         }
-        mExtTrackingEnabled = success && enableExtendedTracking;
+        mExtTrackingEnabled = success && extTrackingEnabled;
     }
 
     public string GetActiveDatasetName()

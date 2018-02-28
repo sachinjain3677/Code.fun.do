@@ -1,5 +1,5 @@
 ﻿/*===============================================================================
-Copyright (c) 2015-2017 PTC Inc. All Rights Reserved.
+Copyright (c) 2015-2016 PTC Inc. All Rights Reserved.
  
 Copyright (c) 2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
  
@@ -22,13 +22,13 @@ public class MenuAnimator : MonoBehaviour
 
 
     #region PUBLIC_PROPERTIES
-    [Range(0, 1)]
+    [Range(0,1)]
     public float SlidingTime = 0.3f;// seconds
     #endregion //PUBLIC_PROPERTIES
 
 
     #region MONOBEHAVIOUR_METHODS
-    void Start()
+    void Start () 
     {
         mInvisiblePos = -Vector3.right * (2 * Screen.width);
         mVisibility = 0;
@@ -37,8 +37,8 @@ public class MenuAnimator : MonoBehaviour
         mCanvas = GetComponentsInChildren<Canvas>(true)[0];
         mMenuOptions = FindObjectOfType<MenuOptions>();
     }
-
-    void Update()
+    
+    void Update () 
     {
         mInvisiblePos = -Vector3.right * Screen.width * 2;
 
@@ -65,15 +65,11 @@ public class MenuAnimator : MonoBehaviour
                 this.transform.position = Vector3.Slerp(mInvisiblePos, mVisiblePos, mVisibility);
 
                 // Switch OFF the UI Canvas when the transition is done.
-                
+                mCanvas.gameObject.SetActive(false);
                 if (mVisibility < 0.01f)
                 {
                     if (mCanvas.enabled)
-                    {
-                        mCanvas.gameObject.SetActive(false);
                         mCanvas.enabled = false;
-                    }
-                        
                 }
             }
             else

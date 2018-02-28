@@ -1,5 +1,5 @@
 /*===============================================================================
-Copyright (c) 2015-2017 PTC Inc. All Rights Reserved.
+Copyright (c) 2015-2016 PTC Inc. All Rights Reserved.
  
 Copyright (c) 2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
  
@@ -36,7 +36,7 @@ public class MenuOptions : MonoBehaviour
     #region PUBLIC_METHODS
     public void ShowAboutPage()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("1-About");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Vuforia-1-About");
     }
 
     public void ToggleAutofocus()
@@ -58,17 +58,17 @@ public class MenuOptions : MonoBehaviour
         }
     }
 
-    public void ToggleFrontCamera()
+    public void SelectCamera(bool front)
     {
         if (mCamSettings)
-        {
-            mCamSettings.SelectCamera(mCamSettings.IsFrontCameraActive() ? CameraDevice.CameraDirection.CAMERA_BACK : CameraDevice.CameraDirection.CAMERA_FRONT);
+		{
+			mCamSettings.SelectCamera(front ? CameraDevice.CameraDirection.CAMERA_FRONT : CameraDevice.CameraDirection.CAMERA_BACK);
 
-            // Toggle flash if it is on while switching to front camera
-            Toggle flashToggle = FindUISelectableWithText<Toggle>("Flash");
-            if (mCamSettings.IsFrontCameraActive() && flashToggle && flashToggle.isOn)
-                ToggleTorch();
-        }
+			// Toggle flash if it is on while switching to front camera
+			Toggle flashToggle = FindUISelectableWithText<Toggle>("Flash");
+			if (front && flashToggle && flashToggle.isOn)
+				ToggleTorch();
+		}
     }
 
     public void ToggleExtendedTracking()
@@ -87,7 +87,7 @@ public class MenuOptions : MonoBehaviour
     public void UpdateUI()
     {
         Toggle extTrackingToggle = FindUISelectableWithText<Toggle>("Extended");
-        if (extTrackingToggle && mTrackableSettings)
+        if (extTrackingToggle && mTrackableSettings) 
             extTrackingToggle.isOn = mTrackableSettings.IsExtendedTrackingEnabled();
 
         Toggle flashToggle = FindUISelectableWithText<Toggle>("Flash");
@@ -95,30 +95,28 @@ public class MenuOptions : MonoBehaviour
             flashToggle.isOn = mCamSettings.IsFlashTorchEnabled();
 
         Toggle autofocusToggle = FindUISelectableWithText<Toggle>("Autofocus");
-        if (autofocusToggle && mCamSettings)
+        if (autofocusToggle && mCamSettings) 
             autofocusToggle.isOn = mCamSettings.IsAutofocusEnabled();
 
-        Toggle frontCamToggle = FindUISelectableWithText<Toggle>("FrontCamera");
+        Toggle frontCamToggle = FindUISelectableWithText<Toggle>("Front");
         if (frontCamToggle && mCamSettings)
             frontCamToggle.isOn = mCamSettings.IsFrontCameraActive();
 
-    }
+        Toggle rearCamToggle = FindUISelectableWithText<Toggle>("Rear");
+        if (rearCamToggle && mCamSettings)
+            rearCamToggle.isOn = !mCamSettings.IsFrontCameraActive();
+        
+        Toggle stonesAndChipsToggle = FindUISelectableWithText<Toggle>("Stones");
+        Toggle tarmacToggle = FindUISelectableWithText<Toggle>("Tarmac");
 
-    public void RestartObjectTracker()
-    {
-        var objTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
-        if (objTracker != null && objTracker.IsActive)
+        if (mTrackableSettings)
         {
-            objTracker.Stop();
+            if (stonesAndChipsToggle && stonesAndChipsToggle.gameObject.activeInHierarchy)
+                stonesAndChipsToggle.isOn = mTrackableSettings.GetActiveDatasetName().Contains("Stones");
 
-            foreach(DataSet dataset in objTracker.GetDataSets())
-            {
-                objTracker.DeactivateDataSet(dataset);
-                objTracker.ActivateDataSet(dataset);
-            }
-
-            objTracker.Start();
-        }
+            if (tarmacToggle && mTrackableSettings && tarmacToggle.gameObject.activeInHierarchy)
+                tarmacToggle.isOn = mTrackableSettings.GetActiveDatasetName().Contains("Tarmac");
+        }        
     }
 
     public void CloseMenu()

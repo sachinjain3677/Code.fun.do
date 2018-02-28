@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_3;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;VUFORIA_ANDROID_SETTINGS;CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_3;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;VUFORIA_ANDROID_SETTINGS;CROSS_PLATFORM_INPUT;MOBILE_INPUT;VUFORIA_SAMPLE_ORIENTATION_SETTINGS;UNITY_HAS_GOOGLEVR</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +60,116 @@
      <Compile Include="Assets\Import_For_Markerless\UserDefinedTargets\Scripts\UDTEventHandler.cs" />
      <Compile Include="Assets\Import_For_Markerless\UserDefinedTargets\Scripts\UDTEventHandler1.cs" />
      <Compile Include="Assets\Import_For_Markerless\UserDefinedTargets\Scripts\UDTSettings.cs" />
+     <Compile Include="Assets\Main_Menu\Common\SplashAbout\AboutScreen.cs" />
+     <Compile Include="Assets\Main_Menu\Common\SplashAbout\AsyncSceneLoader.cs" />
+     <Compile Include="Assets\Main_Menu\Common\SplashAbout\LoadingScreen.cs" />
+     <Compile Include="Assets\Main_Menu\Dropbox\Assets\mainCam.cs" />
+     <Compile Include="Assets\Main_Menu\Dropbox\Assets\sun.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanCameraMove.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanCameraMoveSmooth.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanCameraZoom.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanCameraZoomSmooth.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanDestroy.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanFingerDown.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanFingerHeld.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanFingerLine.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanFingerSwipe.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanFingerTap.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanFingerTrail.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanFingerUp.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanMultiTap.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanMultiTapInfo.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanOpenUrl.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanPitchYaw.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanPitchYawSmooth.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanPressSelect.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanRotate.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanScale.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSelect.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSelectable.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSelectableBehaviour.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSelectableRendererColor.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSelectableSpriteRendererColor.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSelectableTranslateInertia2D.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSelectableTranslateInertia3D.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSpawn.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSwipeDirection4.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSwipeDirection8.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSwipeRigidbody2D.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSwipeRigidbody2DNoRelease.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSwipeRigidbody3D.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanSwipeRigidbody3DNoRelease.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanTapSelect.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanTouchEvents.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanTranslate.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Examples\Scripts\LeanTranslateSmooth.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Scripts\LeanFinger.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Scripts\LeanGesture.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Scripts\LeanSnapshot.cs" />
+     <Compile Include="Assets\Main_Menu\LeanTouch\Scripts\LeanTouch.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\AssembleMS.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\Autofocus.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\BackToAbout.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\CameraPosition.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\Constellation.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\Dragger.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\DrawArea.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\EllipticalMotion.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\GameController.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\HoldButtonEventHandler.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\LoadOnClick.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\MSMotion.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\MoonMOtionSatellite.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\MoonMotion.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\ShowPlanets.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\assemble.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\earthmotion.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\earthrotation.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\motion.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\motion1.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\motionSatellite.cs" />
+     <Compile Include="Assets\Main_Menu\MyScripts\rotator.cs" />
+     <Compile Include="Assets\Main_Menu\ProgressBar\Script\ProgressBarBehaviour.cs" />
+     <Compile Include="Assets\Main_Menu\ProgressBar\Script\ProgressRadialBehaviour.cs" />
+     <Compile Include="Assets\Main_Menu\ProgressBar\Script\Utils.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ARVRAboutManager.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ActiveStateToggler.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\BlackMaskBehaviour.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\Button3D.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\DragMe.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\DragPanel.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\DropMe.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\GazeRay.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ModeConfig.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ModelSwap.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ResizePanel.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\Reticle.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ScrollDetailTexture.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ShowSliderValue.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\TransitionManager.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ViewModeManager.cs" />
+     <Compile Include="Assets\Main_Menu\Scripts\ViewTrigger.cs" />
+     <Compile Include="Assets\Main_Menu\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
+     <Compile Include="Assets\Main_Menu\Stagit\SkyboxEarthPlanets\script\skyboxspace_mouselook_v1.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\Apollorotor.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\DefaultTrackableEventHandler1.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\Explode.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\HSTrotor.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\ISSrotor.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\MenuScript.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\Rotor.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\Textdoc.cs" />
+     <Compile Include="Assets\Main_Menu\Tthings\VirtualButtonEventHandler.cs" />
+     <Compile Include="Assets\Main_Menu\activation.cs" />
+     <Compile Include="Assets\Main_Menu\earth\Scripts\EarthRootScript.cs" />
+     <Compile Include="Assets\Main_Menu\earth\Scripts\EarthScript.cs" />
+     <Compile Include="Assets\Main_Menu\earth\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Main_Menu\earth\Scripts\SphereScript.cs" />
+     <Compile Include="Assets\Main_Menu\immunity.cs" />
      <Compile Include="Assets\My Scripts\BackgroundMusicPlay.cs" />
      <Compile Include="Assets\My Scripts\BombSpawnAndExplode.cs" />
      <Compile Include="Assets\My Scripts\BombSpawnAndExplode_cfd.cs" />
@@ -103,7 +213,7 @@
      <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultSmartTerrainEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
-     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler1.cs" />
+     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandlerdef.cs" />
      <Compile Include="Assets\Vuforia\Scripts\GLErrorHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\HideExcessAreaBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\ImageTargetBehaviour.cs" />
@@ -133,7 +243,6 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\immunity.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Pause Menu Assets\Fonts\open-sans\Apache License.txt" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
@@ -153,28 +262,28 @@
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
- <HintPath>C:/Program Files/Unity5.6.3/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
- <HintPath>C:/Users/sachi/Desktop/Unity_Related/Code.fun.do/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
+ <HintPath>D:/Random to be deleted/Srishti/Code.fun.do/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
