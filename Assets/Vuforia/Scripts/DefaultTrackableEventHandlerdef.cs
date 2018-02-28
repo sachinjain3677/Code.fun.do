@@ -11,7 +11,7 @@ namespace Vuforia
     /// <summary>
     /// A custom handler that implements the ITrackableEventHandler interface.
     /// </summary>
-    public class DefaultTrackableEventHandler1 : MonoBehaviour,
+    public class DefaultTrackableEventHandlerdef : MonoBehaviour,
                                                 ITrackableEventHandler
     {
         #region PRIVATE_MEMBER_VARIABLES

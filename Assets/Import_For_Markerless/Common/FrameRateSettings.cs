@@ -1,5 +1,5 @@
 ﻿/*========================================================================
-Copyright (c) 2016-2017 PTC Inc. All Rights Reserved.
+Copyright (c) 2016 PTC Inc. All Rights Reserved.
 
 Copyright (c) 2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
 
@@ -12,7 +12,7 @@ using Vuforia;
 public class FrameRateSettings : MonoBehaviour
 {
     #region MONOBEHAVIOUR_METHODS
-    void Start()
+    void Start ()
     {
         VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
     }
@@ -20,7 +20,7 @@ public class FrameRateSettings : MonoBehaviour
 
 
     #region PRIVATE_METHODS
-    private void OnVuforiaStarted()
+    private void OnVuforiaStarted ()
     {
         // Query Vuforia for recommended frame rate and set it in Unity
         int targetFps = VuforiaRenderer.Instance.GetRecommendedFps(VuforiaRenderer.FpsHint.NONE);
