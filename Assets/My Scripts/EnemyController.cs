@@ -44,29 +44,29 @@ public class EnemyController : MonoBehaviour {
 		float random_number = Random.Range(0.0f, 1.0f);
 		if(random_number < 0.25f){
 			if(!front_obstruction){
-				return new Vector3(0,0,1);
 				mp.stop = false;
+				return new Vector3(0,0,1);
 			}else{
 				return pick_direction();
 			}
 		}else if(random_number < 0.5f){
 			if(!back_obstruction){
-				return new Vector3(0,0,-1);
 				mp.stop = false;
+				return new Vector3(0,0,-1);
 			}else{
 				return pick_direction();
 			}
 		}else if(random_number < 0.75f){
 			if(!left_obstruction){
-				return new Vector3(-1,0,0);
 				mp.stop = false;
+				return new Vector3(-1,0,0);
 			}else{
 				return pick_direction();
 			}
 		}else{
 			if(!right_obstruction){
-				return new Vector3(1,0,0);
 				mp.stop = false;
+				return new Vector3(1,0,0);
 			}else{
 				return pick_direction();
 			}

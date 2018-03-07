@@ -28,6 +28,8 @@ public class power_pick_up : MonoBehaviour {
 		if(collider.tag=="power_up_increase_blast"){
 			Destroy(collider.gameObject);
 			bsae.explosionSpread++;
+			rlm.power_ups_count--;
+			rlm.set_count_canvas ();
 			music.Play ();
 			Debug.Log ("Power picked up");
 		}
@@ -35,6 +37,8 @@ public class power_pick_up : MonoBehaviour {
 		if (collider.tag == "power_up_increase_speed") {
 			Destroy (collider.gameObject);
 			pc.speed = pc.speed * speed_increase_factor;
+			rlm.power_ups_count--;
+			rlm.set_count_canvas ();
 			music.Play ();
 			Debug.Log ("Power picked up");
 		}
@@ -42,9 +46,11 @@ public class power_pick_up : MonoBehaviour {
 		if (collider.tag == "star_cube") {
 			Destroy (collider.gameObject);
 			starsPickedUp++;
+			rlm.star_cubes_count--;
+			rlm.set_count_canvas ();
 			music.Play ();
 
-			if (starsPickedUp == rlm.star_cubes_spawned) {
+			if (rlm.star_cubes_count == 0) {
 				winMenu.SetActive (true);
 				Debug.Log("Game won!!!");
 			}
