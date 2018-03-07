@@ -75,6 +75,12 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 
 		//SPAWNING ENEMIES
 		for(int i=0; i<enemySections_x; i++){
+
+			if(enemiesSpawned == max_no_of_enemies){
+				//Debug.Log ("break2");	
+				break;
+			}
+
 			for(int j=0; j<enemySections_z; j++){
 				//Debug.Log("i: "+i);
 				//Debug.Log("j: "+j);
@@ -101,10 +107,7 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 				}
 			}
 			
-			if(enemiesSpawned == max_no_of_enemies){
-				//Debug.Log ("break2");	
-				break;
-			}	
+				
 		}		
 
 
@@ -187,10 +190,10 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 		Debug.Log ("func called");
 		for (int i = 0; i < rows - 1; i++) {
 			for (int j = 0; j < columns - 1; j++) {
-				if (om.level [i, j] != null && om.level[i,j].gameObject.tag!="fixed_box") {
+				if (om.level [i, j] != null && om.level[i,j].gameObject.tag!="fixed_box" && om.level[i,j].gameObject.tag!="woodenBox_visible") {
+					GameObject temp = om.level [i, j].gameObject;
 					Destroy(om.level [i, j].gameObject);
 					GameObject spawnedWoodenBox_invisible = Instantiate(woodenBox_invisible, new Vector3(i, 0, j), Quaternion.identity);
-					GameObject temp = om.level [i, j].gameObject;
 					Debug.Log ("Working!!!");
 					om.level [i, j] = spawnedWoodenBox_invisible.gameObject;
 					string tag = "woodenBox_" + (string)temp.tag;
