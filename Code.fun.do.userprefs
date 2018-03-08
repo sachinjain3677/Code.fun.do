@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\My Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\countingNumbersController.cs">
     <Files>
-      <File FileName="Assets\My Scripts\ExplosionTriggerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\My Scripts\BombSpawnAndExplode_cfd.cs" Line="1" Column="1" />
-      <File FileName="Assets\My Scripts\preventCollision.cs" Line="11" Column="40" />
-      <File FileName="Assets\My Scripts\power_pick_up.cs" Line="54" Column="32" NotebookId="1" />
-      <File FileName="Assets\My Scripts\randomLevelMaker_cfd.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets\My Scripts\PlayerController.cs" Line="135" Column="1" NotebookId="1" />
+      <File FileName="Assets\My Scripts\canvascontroller.cs" Line="7" Column="31" />
+      <File FileName="Assets\My Scripts\PlayerController.cs" Line="25" Column="1" />
+      <File FileName="Assets\My Scripts\power_pick_up.cs" Line="19" Column="1" />
+      <File FileName="Assets\My Scripts\randomLevelMaker_cfd.cs" Line="46" Column="15" />
+      <File FileName="Assets\My Scripts\BombSpawnAndExplode_cfd.cs" Line="43" Column="39" />
+      <File FileName="Assets\countingNumbersController.cs" Line="31" Column="34" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
