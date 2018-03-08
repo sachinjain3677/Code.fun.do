@@ -51,6 +51,7 @@ public class power_pick_up : MonoBehaviour {
 			music.Play ();
 
 			if (rlm.star_cubes_count == 0) {
+				Debug.Log ("reached here");
 				winMenu.SetActive (true);
 				Debug.Log("Game won!!!");
 			}

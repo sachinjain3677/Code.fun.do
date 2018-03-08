@@ -194,6 +194,7 @@
      <Compile Include="Assets\My Scripts\player_control_direction_predictor.cs" />
      <Compile Include="Assets\My Scripts\player_touched.cs" />
      <Compile Include="Assets\My Scripts\power_pick_up.cs" />
+     <Compile Include="Assets\My Scripts\preventCollision.cs" />
      <Compile Include="Assets\My Scripts\randomLevelMaker.cs" />
      <Compile Include="Assets\My Scripts\randomLevelMaker_cfd.cs" />
      <Compile Include="Assets\My Scripts\right_button_control.cs" />
