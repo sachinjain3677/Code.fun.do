@@ -182,6 +182,7 @@
      <Compile Include="Assets\My Scripts\PlayerController.cs" />
      <Compile Include="Assets\My Scripts\SceneManagement.cs" />
      <Compile Include="Assets\My Scripts\Walk_and_Run.cs" />
+     <Compile Include="Assets\My Scripts\canvascontroller.cs" />
      <Compile Include="Assets\My Scripts\down_button_control.cs" />
      <Compile Include="Assets\My Scripts\down_button_control_cfd.cs" />
      <Compile Include="Assets\My Scripts\fire_button_control.cs" />
@@ -245,6 +246,7 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
+     <Compile Include="Assets\countingNumbersController.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Pause Menu Assets\Fonts\open-sans\Apache License.txt" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />

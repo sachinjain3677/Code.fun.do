@@ -44,7 +44,7 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 	public Text label_WinnerStar;
 
 	void Start(){
-		//Debug.Log ("called");
+		Debug.Log ("shart lagi h bhai!!");
 		power_ups_count = 0;
 		woodenBox_spawn_count = 0;
 		star_cubes_count = 0;
