@@ -29,7 +29,7 @@ public class power_pick_up : MonoBehaviour {
 			Destroy(collider.gameObject);
 			bsae.explosionSpread++;
 			rlm.power_ups_count--;
-			rlm.set_count_canvas ();
+			//rlm.set_count_canvas ();
 			music.Play ();
 			Debug.Log ("Power picked up");
 		}
@@ -38,7 +38,7 @@ public class power_pick_up : MonoBehaviour {
 			Destroy (collider.gameObject);
 			pc.speed = pc.speed * speed_increase_factor;
 			rlm.power_ups_count--;
-			rlm.set_count_canvas ();
+			//rlm.set_count_canvas ();
 			music.Play ();
 			Debug.Log ("Power picked up");
 		}
@@ -47,7 +47,7 @@ public class power_pick_up : MonoBehaviour {
 			Destroy (collider.gameObject);
 			starsPickedUp++;
 			rlm.star_cubes_count--;
-			rlm.set_count_canvas ();
+			//rlm.set_count_canvas ();
 			music.Play ();
 
 			if (rlm.star_cubes_count == 0) {
