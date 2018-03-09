@@ -12,7 +12,7 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 	int[] enemy_position_z;
 	//EnemyController[] enemy_movement_script_list;
 
-	int woodenBox_spawn_count;//need it as we need to know where to spawn powerUps, stars etc
+	int woodenBox_spawn_count = 0;//need it as we need to know where to spawn powerUps, stars etc
 //	int total_objects_spawned;
 
 	public GameObject star_cube;
@@ -28,9 +28,9 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 	public int max_no_of_enemies;
 	public int max_no_of_power_ups;
 	public int max_star_cubes;
-	public int star_cubes_count;//public so can be used in other script
-	public int enemyCount;//public so can be used in other script
-	public int power_ups_count;//public so can be used in other script
+	public int star_cubes_count = 0;//public so can be used in other script
+	public int enemyCount = 0;//public so can be used in other script
+	public int power_ups_count = 0;//public so can be used in other script
 
 	public float distancePerEnemy_x;//actual distance in units is obtained by multiplying this by skipFactor
 	public float distancePerEnemy_z;//actual distance in units is obtained by multiplying this by skipFactor
@@ -45,16 +45,16 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 
 	void Start(){
 		Debug.Log ("shart lagi h bhai!!");
-		power_ups_count = 0;
-		woodenBox_spawn_count = 0;
-		star_cubes_count = 0;
-		enemyCount = 0;
+		//power_ups_count = 0;
+		//woodenBox_spawn_count = 0;
+		//star_cubes_count = 0;
+		//enemyCount = 0;
 		//total_objects_spawned = 0;
 	}
 
-	public void set_count_canvas(){
+	void Update(){
 		label_enemy.text = "" + enemyCount;
-		//Debug.Log ("enemyCount: " + enemyCount);
+		Debug.Log ("enemyCount: " + enemyCount);
 		label_PowerUp.text = "" + power_ups_count;
 		label_WinnerStar.text = "" + star_cubes_count;
 	}
@@ -62,7 +62,7 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 
 	public void generateLevel() {
 		//enemy_movement_script_list = new EnemyController[max_no_of_enemies];
-		enemyCount = 0;//no of enemies spawned so far
+		//enemyCount = 0;//no of enemies spawned so far
 		om = GameObject.Find("GameController").GetComponent<ObjectMatrix>();
 		rows = om.rows;//rows on the game field
 		columns = om.columns;//columns on the game field
@@ -115,6 +115,7 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 					enemySpawned.transform.parent = level.transform;
 					//enemy_movement_script_list[enemyCount] = enemySpawned.GetComponent<EnemyController>();
 					enemyCount++;
+					Debug.Log ("enemyCount2: " + enemyCount);
 					//total_objects_spawned++;
 				}
 			}
@@ -139,21 +140,21 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 						//om.level[i,j] = spawnedWoodenBox.gameObject;
 						//woodenBox_spawn_count++;
 						//total_objects_spawned++;
-						if (woodenBox_spawn_count == 7) {//power up in 7th cube
+						if (woodenBox_spawn_count == 10) {//power up in 7th cube
 							//spawnedWoodenBox.transform.gameObject.tag = "woodenBox_power_up_increase_blast";//set tag of wooden box with power inside it as woodenBox_power_up
 							spawnedWoodenBox = Instantiate (power_up_increase_blast, new Vector3 (i, 0, j), Quaternion.identity);
 							om.level [i, j] = spawnedWoodenBox.gameObject;
 							power_ups_count++;
 							woodenBox_spawn_count++;
 							//total_objects_spawned++;
-						} else if (woodenBox_spawn_count == 12) {//power up in 12th cube
+						} else if (woodenBox_spawn_count == 16) {//power up in 12th cube
 							//spawnedWoodenBox.transform.gameObject.tag = "woodenBox_power_up_increase_speed";//set tag of wooden box with power inside it as woodenBox_power_up
 							spawnedWoodenBox = Instantiate (power_up_increase_speed, new Vector3 (i, 0, j), Quaternion.identity);
 							om.level [i, j] = spawnedWoodenBox.gameObject;
 							power_ups_count++;
 							woodenBox_spawn_count++;
 							//total_objects_spawned++;
-						} else if (woodenBox_spawn_count == 15) {//star in 12th cube
+						} else if (woodenBox_spawn_count == 5) {//star in 12th cube
 							spawnedWoodenBox = Instantiate (star_cube, new Vector3 (i, 0, j), Quaternion.identity);
 							om.level [i, j] = spawnedWoodenBox.gameObject;
 							star_cubes_count++;
@@ -172,6 +173,7 @@ public class randomLevelMaker_cfd: MonoBehaviour {
 							//total_objects_spawned++;
 						}
 						spawnedWoodenBox.transform.parent = level.transform;
+						Debug.Log("spawned_wooden_boxes" + woodenBox_spawn_count);
 					}
 				} else if(om.level [i, j].gameObject.tag != "Enemy_still"){
 					om.level [i, j].gameObject.tag = "fixed_box";
