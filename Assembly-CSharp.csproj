@@ -212,6 +212,7 @@
      <Compile Include="Assets\Pause Menu Assets\Scripts\Utlities\Rotate.cs" />
      <Compile Include="Assets\Survival Shooter\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Survival Shooter\Scripts\Enemy\EnemyMovement.cs" />
+     <Compile Include="Assets\Timer.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -248,6 +249,7 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
+     <Compile Include="Assets\score_counter.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Pause Menu Assets\Fonts\open-sans\Apache License.txt" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />

@@ -7,19 +7,21 @@ public class power_pick_up : MonoBehaviour {
 	BombSpawnAndExplode_cfd bsae;
 	PlayerController pc;
 	randomLevelMaker_cfd rlm;
+	score_counter sc;
 
 	int starsPickedUp;
 
 	public AudioSource music;
-	public GameObject winMenu;
+	public GameObject gameOvermenu;
 	public float speed_increase_factor;
 
 	void Start(){
-		winMenu.SetActive (false);
+		gameOvermenu.SetActive (false);
 		rlm = GameObject.Find ("GameController").GetComponent<randomLevelMaker_cfd> ();
 		starsPickedUp = 0;
 		bsae = GameObject.Find("GameController").GetComponent<BombSpawnAndExplode_cfd>();
 		pc = GetComponent<PlayerController> ();
+		sc = GameObject.Find ("GameController").GetComponent<score_counter> ();
 	}
 
 
@@ -32,6 +34,7 @@ public class power_pick_up : MonoBehaviour {
 			//rlm.set_count_canvas ();
 			music.Play ();
 			Debug.Log ("Power picked up");
+			sc.net_score += sc.points_powerUp;
 		}
 
 		if (collider.tag == "power_up_increase_speed") {
@@ -41,6 +44,7 @@ public class power_pick_up : MonoBehaviour {
 			//rlm.set_count_canvas ();
 			music.Play ();
 			Debug.Log ("Power picked up");
+			sc.net_score += sc.points_powerUp;
 		}
 
 		if (collider.tag == "star_cube") {
@@ -49,10 +53,11 @@ public class power_pick_up : MonoBehaviour {
 			rlm.star_cubes_count--;
 			//rlm.set_count_canvas ();
 			music.Play ();
+			sc.net_score += sc.points_winningStar;
 
 			if (rlm.star_cubes_count == 0) {
 				Debug.Log ("reached here");
-				winMenu.SetActive (true);
+				gameOvermenu.SetActive (true);
 				Debug.Log("Game won!!!");
 			}
 		}

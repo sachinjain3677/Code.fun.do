@@ -486,6 +486,31 @@ namespace GreatArcStudios
 
 
         }
+
+
+		public void ourFunction_pause(){
+			uiEventSystem.SetSelectedGameObject(defualtSelectedMain);
+			Time.timeScale = 0;
+			for (int i = 0; i < otherUIElements.Length; i++)
+			{
+				otherUIElements[i].gameObject.SetActive(false);
+			}
+		}
+
+		public void ourFunction_resume(){
+			Time.timeScale = timeScale;
+			//mainPanel.SetActive(false);
+			//vidPanel.SetActive(false);
+			//audioPanel.SetActive(false);
+			//TitleTexts.SetActive(false);
+			//mask.SetActive(false);
+			for (int i = 0; i < otherUIElements.Length; i++)
+			{
+				otherUIElements[i].gameObject.SetActive(true);
+			}
+		}
+
+
         /*
         void colorCrossfade()
         {
