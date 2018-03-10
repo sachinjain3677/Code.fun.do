@@ -1,14 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\My Scripts\ExplosionTriggerScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\My Scripts\turnMusicOff.cs">
     <Files>
       <File FileName="Assets\My Scripts\canvascontroller.cs" Line="1" Column="1" />
       <File FileName="Assets\My Scripts\PlayerController.cs" Line="11" Column="25" />
-      <File FileName="Assets\My Scripts\power_pick_up.cs" Line="26" Column="41" />
       <File FileName="Assets\My Scripts\randomLevelMaker_cfd.cs" Line="163" Column="45" />
-      <File FileName="Assets\My Scripts\BombSpawnAndExplode_cfd.cs" Line="39" Column="2" />
-      <File FileName="Assets\My Scripts\ExplosionTriggerScript.cs" Line="8" Column="2" />
-      <File FileName="Assets\My Scripts\player_control_direction_predictor.cs" Line="142" Column="22" NotebookId="1" />
+      <File FileName="Assets\My Scripts\turnMusicOff.cs" Line="32" Column="41" />
+      <File FileName="Assets\score_counter.cs" Line="31" Column="46" />
+      <File FileName="Assets\My Scripts\player_control_direction_predictor.cs" Line="58" Column="5" NotebookId="1" />
+      <File FileName="Assets\Pause Menu Assets\Scripts\Pausemenu\PauseManager.cs" Line="503" Column="6" NotebookId="1" />
+      <File FileName="Assets\My Scripts\BombSpawnAndExplode_cfd.cs" Line="56" Column="29" NotebookId="1" />
+      <File FileName="Assets\My Scripts\ExplosionTriggerScript.cs" Line="27" Column="23" NotebookId="1" />
+      <File FileName="Assets\My Scripts\power_pick_up.cs" Line="19" Column="15" NotebookId="1" />
+      <File FileName="Assets\Timer.cs" Line="7" Column="2" NotebookId="1" />
+      <File FileName="Assets\My Scripts\countingNumbersController.cs" Line="16" Column="32" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

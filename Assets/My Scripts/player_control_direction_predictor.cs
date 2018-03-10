@@ -55,7 +55,7 @@ public class player_control_direction_predictor : MonoBehaviour {
 		//Debug.Log (ar_camera.transform.eulerAngles.y);
 
 		net_angle_height = (float)(Math.Atan (ar_camera.transform.position.y / (Mathf.Sqrt( (x - om.rows/2) * (x - om.rows/2) + (z - om.columns/2) * (z - om.columns/2) ) + 25.0f)) * 180 / Math.PI);
-		Debug.Log (net_angle_height);
+		//Debug.Log (net_angle_height);
 		if (net_angle_height < 30.0f && net_angle_height > 0.0f) {
 			if (net_angle > 90.0f - alpha) {
 				if (net_angle < 90.0f + alpha) {
