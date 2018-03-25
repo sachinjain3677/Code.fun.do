@@ -14,6 +14,7 @@ public class countingNumbersController : MonoBehaviour {
 	public GameObject startSounds;
 	public GameObject countCanvas;
 	public GameObject timerCanvas;
+	public GameObject pause_menu;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,9 @@ public class countingNumbersController : MonoBehaviour {
 				startSounds.SetActive (true);
 				countCanvas.SetActive (true);
 				timerCanvas.SetActive (true);
+				pause_menu.SetActive(true);
 				gameObject.SetActive (false);
+		
 			} else {
 				label.text = "" + (int)(2.0f - time_so_far);
 				time_so_far = time_so_far + 1.0f;

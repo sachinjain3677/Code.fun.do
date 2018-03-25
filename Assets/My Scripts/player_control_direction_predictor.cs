@@ -51,7 +51,7 @@ public class player_control_direction_predictor : MonoBehaviour {
 
 		rotation_y = ar_camera.transform.eulerAngles.y;
 		net_angle = (rotation_y + 180.0f) % 360;
-		alpha = (float)(Math.Atan (om.columns / om.rows) * 180 / Math.PI);
+		alpha = (float)(Math.Atan ((float)om.columns / om.rows) * 180 / Math.PI);
 		//Debug.Log (ar_camera.transform.eulerAngles.y);
 
 		net_angle_height = (float)(Math.Atan (ar_camera.transform.position.y / (Mathf.Sqrt( (x - om.rows/2) * (x - om.rows/2) + (z - om.columns/2) * (z - om.columns/2) ) + 25.0f)) * 180 / Math.PI);
@@ -59,7 +59,7 @@ public class player_control_direction_predictor : MonoBehaviour {
 		if (net_angle_height < 30.0f && net_angle_height > 0.0f) {
 			if (net_angle > 90.0f - alpha) {
 				if (net_angle < 90.0f + alpha) {
-					pc.ar_camera_side = 3;
+					//pc.ar_camera_side = 3;
 					//color = s4.color;
 					//color.a = effective_alpha_value;
 					g4_inv.SetActive (true);
@@ -73,7 +73,7 @@ public class player_control_direction_predictor : MonoBehaviour {
 					g3.SetActive (true);
 					Debug.Log (pc.ar_camera_side);
 				} else if (net_angle < 270.0f - alpha) {
-					pc.ar_camera_side = 0;
+					//pc.ar_camera_side = 0;
 					//color = s1.color;
 					//color.a = 0;
 					g1_inv.SetActive (true);
@@ -87,7 +87,7 @@ public class player_control_direction_predictor : MonoBehaviour {
 					g4.SetActive (true);
 					Debug.Log (pc.ar_camera_side);
 				} else if (net_angle < 270.0f + alpha) {
-					pc.ar_camera_side = 1;
+					//pc.ar_camera_side = 1;
 					//color = s2.color;
 					//color.a = effective_alpha_value;
 					g2_inv.SetActive (true);
@@ -102,7 +102,7 @@ public class player_control_direction_predictor : MonoBehaviour {
 					g4.SetActive (true);
 					Debug.Log (pc.ar_camera_side);
 				} else {
-					pc.ar_camera_side = 2;
+					//pc.ar_camera_side = 2;
 					//color = s3.color;
 					//color.a = effective_alpha_value;
 					g3_inv.SetActive (true);
@@ -118,7 +118,7 @@ public class player_control_direction_predictor : MonoBehaviour {
 					Debug.Log (pc.ar_camera_side);
 				}
 			} else {
-				pc.ar_camera_side = 2;
+				//pc.ar_camera_side = 2;
 				//color = s3.color;
 				//color.a = effective_alpha_value;
 				g3_inv.SetActive (true);
@@ -144,7 +144,84 @@ public class player_control_direction_predictor : MonoBehaviour {
 			g2.SetActive (true);
 			g4.SetActive (true);
 		}
+		if (net_angle > 90.0f - alpha) {
+			if (net_angle < 90.0f + alpha) {
+				pc.ar_camera_side = 3;
+				//color = s4.color;
+				//color.a = effective_alpha_value;
+				/*g4_inv.SetActive (true);
+			g1_inv.SetActive (false);
+			g2_inv.SetActive (false);
+			g3_inv.SetActive (false);
+
+			g4.SetActive (false);
+			g1.SetActive (true);
+			g2.SetActive (true);
+			g3.SetActive (true);
+			Debug.Log (pc.ar_camera_side);*/
+			} else if (net_angle < 270.0f - alpha) {
+				pc.ar_camera_side = 0;
+				//color = s1.color;
+				//color.a = 0;
+				/*g1_inv.SetActive (true);
+			g2_inv.SetActive (false);
+			g3_inv.SetActive (false);
+			g4_inv.SetActive (false);
+
+			g1.SetActive (false);
+			g2.SetActive (true);
+			g3.SetActive (true);
+			g4.SetActive (true);
+			Debug.Log (pc.ar_camera_side);*/
+			} else if (net_angle < 270.0f + alpha) {
+				pc.ar_camera_side = 1;
+				//color = s2.color;
+				//color.a = effective_alpha_value;
+				/*g2_inv.SetActive (true);
+			g1_inv.SetActive (false);
+			g3_inv.SetActive (false);
+			g4_inv.SetActive (false);
+
+
+			g2.SetActive (false);
+			g1.SetActive (true);
+			g3.SetActive (true);
+			g4.SetActive (true);
+			Debug.Log (pc.ar_camera_side);*/
+			} else {
+				pc.ar_camera_side = 2;
+				//color = s3.color;
+				//color.a = effective_alpha_value;
+				/*g3_inv.SetActive (true);
+			g1_inv.SetActive (false);
+			g2_inv.SetActive (false);
+			g4_inv.SetActive (false);
+
+
+			g3.SetActive (false);
+			g1.SetActive (true);
+			g2.SetActive (true);
+			g4.SetActive (true);
+			Debug.Log (pc.ar_camera_side);*/
+			}
+		} else {
+			pc.ar_camera_side = 2;
+			//color = s3.color;
+			//color.a = effective_alpha_value;
+			/*g3_inv.SetActive (true);
+		g1_inv.SetActive (false);
+		g2_inv.SetActive (false);
+		g4_inv.SetActive (false);
+
+
+		g3.SetActive (false);
+		g1.SetActive (true);
+		g2.SetActive (true);
+		g4.SetActive (true);
+		Debug.Log (pc.ar_camera_side);*/
+		}
 	}
+
 
 
 	// Update is called once per frame

@@ -16,7 +16,7 @@ namespace GreatArcStudios
 	public class PauseManager : MonoBehaviour
     {
         
-
+		public GameObject Pause;
 		/// <summary>
         /// This is the main panel holder, which holds the main panel and should be called "main panel"
         /// </summary> 
@@ -252,6 +252,8 @@ namespace GreatArcStudios
         private Boolean lastDOFBool;
         public static Terrain readTerrain;
         public static Terrain readSimpleTerrain;
+		//Score hiding
+		public GameObject Score;
 
         private SaveSettings saveSettings = new SaveSettings();
         /*
@@ -372,7 +374,7 @@ namespace GreatArcStudios
         public void Resume()
         {
             Time.timeScale = timeScale;
-
+			Score.SetActive (true);
             mainPanel.SetActive(false);
             vidPanel.SetActive(false);
             audioPanel.SetActive(false);
@@ -427,6 +429,7 @@ namespace GreatArcStudios
         {
             Application.LoadLevel(mainMenu);
             uiEventSystem.SetSelectedGameObject(defualtSelectedMain);
+			Pause.SetActive (false);
         }
 
         // Update is called once per frame
@@ -453,7 +456,7 @@ namespace GreatArcStudios
 
             if (Input.GetKeyDown(KeyCode.Escape) && mainPanel.active == false)
             {
-
+				Score.SetActive (false);
                 uiEventSystem.SetSelectedGameObject(defualtSelectedMain);
                 mainPanel.SetActive(true);
                 vidPanel.SetActive(false);
@@ -472,6 +475,7 @@ namespace GreatArcStudios
             }
             else if(Input.GetKeyDown(KeyCode.Escape) && mainPanel.active == true) {
                 Time.timeScale = timeScale;
+				Score.SetActive (true);
                 mainPanel.SetActive(false);
                 vidPanel.SetActive(false);
                 audioPanel.SetActive(false);
