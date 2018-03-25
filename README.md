@@ -1,7 +1,7 @@
 # AriesProject
 Augmented Reality video game made for ARIES.
 
-![alt text](Screenshot(1).png)
+![alt text](https://github.com/sachinjain3677/Code.fun.do/blob/master/Screenshot%20(1).png)
 
 Todo:
 
