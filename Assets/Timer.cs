@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour {
 	public Text timer_text;
 	public GameObject gameOverMenu;
 	public float value_on_timer;
+	public GameObject pause;
 
 	float time_passed;
 	float time_value_on_start;
@@ -17,6 +18,7 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		pause.SetActive (true);
 		time_passed = 0.0f;
 		time_value_on_start = Time.time;
 	}

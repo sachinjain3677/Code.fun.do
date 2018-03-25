@@ -15,8 +15,12 @@ namespace Vuforia
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
+		GreatArcStudios.PauseManager pm;
+		public GameObject pause_menu;
+		public GameObject death_menu;
+		public static int Array_size=13;
+		public AudioSource[] sounds =new AudioSource[Array_size];
         public GameObject[] ChildObjects;
-
         private Renderer[] temprenderercomponents;
         private Collider[] tempcollidercomponents;
 
@@ -135,12 +139,25 @@ namespace Vuforia
             if (newStatus == TrackableBehaviour.Status.DETECTED ||
                 newStatus == TrackableBehaviour.Status.TRACKED ||
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
-            {
+			{ if (pause_menu.activeSelf && !(pm.mainPanel.activeSelf) && !(death_menu.activeSelf)) {
+					pm = GameObject.Find ("Pause Menu Manager").GetComponent<GreatArcStudios.PauseManager> ();
+					pm.ourFunction_resume();
+					for (int i = 0; i < Array_size; i++) {
+						sounds [i].UnPause ();
+					}
+				}
                 OnTrackingFound();
                 start = 1;
             }
             else
             {
+				if (pause_menu.activeSelf) {
+					for (int i = 0; i < Array_size; i++) {
+						sounds [i].Pause();
+					}
+					pm = GameObject.Find ("Pause Menu Manager").GetComponent<GreatArcStudios.PauseManager> ();
+					pm.ourFunction_pause();
+				}
                 OnTrackingLost();
             }
         }
@@ -154,9 +171,10 @@ namespace Vuforia
 
         private void OnTrackingFound()
         {
+			
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
+	
             /*if (tempcollidercomponents != null || temprenderercomponents != null)
             {
                 for (int i = 0; i < temprenderercomponents.Length; i++)
@@ -244,10 +262,10 @@ namespace Vuforia
 
 
         private void OnTrackingLost()
-        {
+		{		
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
+	
             // Disable rendering: 
             foreach (Renderer component in rendererComponents)
             {
