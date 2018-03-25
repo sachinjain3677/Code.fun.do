@@ -1,6 +1,8 @@
 # AriesProject
 Augmented Reality video game made for ARIES.
 
+![alt text]()
+
 Todo:
 
 - [ ] Logo
